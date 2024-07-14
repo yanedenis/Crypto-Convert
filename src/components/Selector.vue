@@ -4,27 +4,20 @@ export default {
         setCrypto: {
             type: Function,
             required: true,
+        },
+        cryptoNow: {
+            type: String,
+            required: true,
         }
     },
-    data() {
-        return {
-            currentValue: '',
-        }
-    },
-    methods: {
-        selectValue(value) {
-            this.setCrypto(value);
-            this.currentValue = value;
-        }
-    }
 }
 </script>
 
 <template>
     <ul>
-        <li @click="selectValue('BTC')" :className="currentValue == 'BTC' ? 'active' : ''">Bitcoin</li>
-        <li @click="selectValue('ETH')" :className="currentValue == 'ETH' ? 'active' : ''">ETH</li>
-        <li @click="selectValue('USDT')" :className="currentValue == 'USDT' ? 'active' : ''">USDT</li>
+        <li @click="setCrypto('BTC')" :className="cryptoNow == 'BTC' ? 'active' : ''">Bitcoin</li>
+        <li @click="setCrypto('ETH')" :className="cryptoNow == 'ETH' ? 'active' : ''">ETH</li>
+        <li @click="setCrypto('USDT')" :className="cryptoNow == 'USDT' ? 'active' : ''">USDT</li>
     </ul>
 </template>
 
