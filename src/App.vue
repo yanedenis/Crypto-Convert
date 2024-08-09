@@ -24,6 +24,14 @@ export default {
                 this.error = 'Choose different currency';
                 return;
             };
+            
+            for (let i = 0; i < this.favs.length; i++) {
+                if (this.crypto1 === this.favs[i].from &&
+                    this.crypto2 === this.favs[i].to) {
+                        this.error = 'Already in favorites';
+                        return;
+                }
+            }
 
             this.error = '';
             this.favs.push({
